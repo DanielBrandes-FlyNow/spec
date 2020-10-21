@@ -1,3 +1,19 @@
+Changes in this Fork
+--------------------
+
+This is a slightly modified version of the specs used for modified version of
+chevron, that uses a more strict variant of mustache template language. Modifications are
+
+- force error if key not found and template is no {{#...}} or {{^...}}
+- do not look in scopes over actl. scope to find variables
+- force error if partial is not found
+- default do no html escaping!
+- fixes internal tests
+- changed to forked version of specs that are compatible with changes above.
+
+Original README
+----------
+
 The repository at https://github.com/mustache/spec is the formal standard for
 Mustache.  It defines both normal usage and edge-case behavior for libraries
 parsing the Mustache templating language (or a superset thereof).
