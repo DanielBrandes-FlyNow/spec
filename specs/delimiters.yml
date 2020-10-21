@@ -20,55 +20,55 @@ tests:
     template: '({{=[ ]=}}[text])'
     expected: '(It worked!)'
 
-  - name: Sections
-    desc: Delimiters set outside sections should persist.
-    data: { section: {data: 'I got interpolated.'} }
-    template: |
-      [
-      {{#section}}
-        {{data}}
-        |data|
-      {{/section}}
+  #- name: Sections
+  #  desc: Delimiters set outside sections should persist.
+  #  data: { section: {data: 'I got interpolated.'} }
+  #  template: |
+  #    [
+  #    {{#section}}
+  #      {{data}}
+  #      |data|
+  #    {{/section}}
+  #
+  #    {{= | | =}}
+  #    |#section|
+  #      {{data}}
+  #      |data|
+  #    |/section|
+  #    ]
+  #  expected: |
+  #    [
+  #      I got interpolated.
+  #      |data|
+  #
+  #      {{data}}
+  #      I got interpolated.
+  #    ]
 
-      {{= | | =}}
-      |#section|
-        {{data}}
-        |data|
-      |/section|
-      ]
-    expected: |
-      [
-        I got interpolated.
-        |data|
-
-        {{data}}
-        I got interpolated.
-      ]
-
-  - name: Inverted Sections
-    desc: Delimiters set outside inverted sections should persist.
-    data: { section: false, data: 'I got interpolated.' }
-    template: |
-      [
-      {{^section}}
-        {{data}}
-        |data|
-      {{/section}}
-
-      {{= | | =}}
-      |^section|
-        {{data}}
-        |data|
-      |/section|
-      ]
-    expected: |
-      [
-        I got interpolated.
-        |data|
-
-        {{data}}
-        I got interpolated.
-      ]
+  #- name: Inverted Sections
+  #  desc: Delimiters set outside inverted sections should persist.
+  #  data: { section: false, data: 'I got interpolated.' }
+  #  template: |
+  #    [
+  #    {{^section}}
+  #      {{data}}
+  #      |data|
+  #    {{/section}}
+  #
+  #    {{= | | =}}
+  #    |^section|
+  #      {{data}}
+  #      |data|
+  #    |/section|
+  #    ]
+  #  expected: |
+  #    [
+  #      I got interpolated.
+  #      |data|
+  #
+  #      {{data}}
+  #      I got interpolated.
+  #    ]
 
   - name: Partial Inheritence
     desc: Delimiters set in a parent template should not affect a partial.
