@@ -41,13 +41,13 @@ tests:
     expected: |
       Hello, world!
 
-  - name: HTML Escaping
-    desc: Basic interpolation should be HTML escaped.
+  - name: no HTML Escaping
+    desc: Basic interpolation should not be HTML escaped.
     data: { forbidden: '& " < >' }
     template: |
-      These characters should be HTML escaped: {{forbidden}}
+      These characters should not be HTML escaped: {{forbidden}}
     expected: |
-      These characters should be HTML escaped: &amp; &quot; &lt; &gt;
+      These characters should not be HTML escaped: & " < >
 
   - name: Triple Mustache
     desc: Triple mustaches should interpolate without HTML escaping.
