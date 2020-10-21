@@ -22,7 +22,7 @@ tests:
 
   - name: Sections
     desc: Delimiters set outside sections should persist.
-    data: { section: true, data: 'I got interpolated.' }
+    data: { section: {data: 'I got interpolated.'} }
     template: |
       [
       {{#section}}
