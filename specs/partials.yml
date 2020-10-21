@@ -21,12 +21,13 @@ tests:
     partials: { text: 'from partial' }
     expected: '"from partial"'
 
-  - name: Failed Lookup
-    desc: The empty string should be used when the named partial is not found.
-    data: { }
-    template: '"{{>text}}"'
-    partials: { }
-    expected: '""'
+  #this should give an error!
+  #- name: Failed Lookup
+  #  desc: The empty string should be used when the named partial is not found.
+  #  data: { }
+  #  template: '"{{>text}}"'
+  #  partials: { }
+  #  expected: '""'
 
   - name: Context
     desc: The greater-than operator should operate within the current context.
